@@ -131,6 +131,6 @@ d.textContent = "User cancelled or didn't enter anything!";
 """
         return res
     elif s["status"] == 202:
-        return f'<script>document.location.replace({s["link"]});</script>'
+        return f'<script>document.location.replace("{s["link"]}");</script>'
     elif s["status"] == 404:
         return "<meta name='viewport' content='width=device-width'>Not found."
