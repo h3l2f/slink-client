@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__,template_folder="templates")
 
-host = "http://127.0.0.1:8000"
+host = "http://slinkapi.pythonanywhere.com"
 
 @app.route("/")
 def homepage():
