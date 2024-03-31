@@ -112,12 +112,14 @@ def not_found(e):
 <div id="sol"></div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function(event) {
 const path = window.location.pathname;
 let p = window.prompt("Enter password:","");
 if (p == null || p == "") {
 d = document.getElementById("sol");
 d.textContent = "User cancelled or didn't enter anything!";
 } else {window.location=path+"?p="+p}
+});
 </script>
 
 </body>
