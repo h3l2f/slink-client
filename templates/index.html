@@ -1,1 +1,27 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate link</title>
+</head>
+<body>
+    <form method="post" action="/generate/start">
+        <h2>Slink Generator</h2>
+        <input type="url" id="url" name="url" placeholder="Long URL" required>
+        <br> <input type="text" id="scode" name="scode" placeholder="Custom scode" maxlength="30"><br>
+        <input type="password" id="pass" name="pass" placeholder="Spassword" maxlength="25"><input type="checkbox" id="pw" name="pw" class="pw" onclick="shpw()">Show password
+        <br><button type="submit">Generate</button>
+    </form>
+<script>
+function shpw() {
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+</script>
+</body>
+</html>
