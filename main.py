@@ -109,10 +109,14 @@ def not_found(e):
 
 <body>
 
-<div id="sol"></div>
+<div id="sol">Calling prompt...</div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function(event) {
+let sleep = ms => {
+return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+sleep(1500).then(() => {
 const path = window.location.pathname;
 let p = window.prompt("Enter password:","");
 if (p == null || p == "") {
