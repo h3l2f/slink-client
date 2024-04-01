@@ -4,6 +4,8 @@ import json
 
 app = Flask(__name__,template_folder="templates")
 
+word = ["'",'"',"\ "]
+
 host = "http://slinkapi.pythonanywhere.com"
 
 @app.route("/")
@@ -21,6 +23,8 @@ def gen():
     p = request.form["pass"]
     url = request.form["url"]
     sc = request.form["scode"]
+    if any(chr in word for chr in p):
+        return "<script>localStorage.setItem('status','spc1');window.location='/generate/result'</script>Please wait..."
 
     p = "" if p == None else p
     sc = "" if sc == None else sc
@@ -43,7 +47,7 @@ def gen():
 <script>
 localStorage.setItem("status","{s["s"]}");
 localStorage.setItem("scode","{s["scode"]}");
-localStorage.setItem("pass",{s["pass"]});
+localStorage.setItem("pass","{s["pass"]}");
 window.location="/generate/result";
 
 </script>
@@ -56,7 +60,7 @@ Please wait...<br>
 
 @app.route("/generate/result")
 def result():
-    return """
+    return r"""
 <meta name="viewport" content="width=device-width">
 <span id="scode">Null</span> <span id="passwd"></span>
 <script>
@@ -72,7 +76,7 @@ if (status == "d") {
     s.textContent = "Your Scode is: ";
     s1.setAttribute("style","color : red;");
     s.appendChild(s1);
-}} else {if (status == "spc1") {s.textContent='Password cannot include >>>"<<<'}
+}} else {if (status == "spc1") {s.textContent='Password cannot include >>>[",',\]<<<'}
 };
 
 if (pass=="") {} else {                                                                     var show_pass = document.getElementById("passwd");
