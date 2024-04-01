@@ -99,7 +99,10 @@ def not_found(e):
     s = json.loads(s.text)
 
     if s["status"] == 403:
-        res = """
+        if (pwd != ""):
+            return f'<script>document.location.replace("/{p}");</script>'
+        else:
+            res = """
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,7 +132,7 @@ d.textContent = "User cancelled or didn't enter anything!";
 </body>
 </html>
 """
-        return res
+            return res
     elif s["status"] == 202:
         return f'<script>document.location.replace("{s["link"]}");</script>'
     elif s["status"] == 404:
