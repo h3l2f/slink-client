@@ -24,7 +24,7 @@ def gen():
     url = request.form["url"]
     sc = request.form["scode"]
     if any(chr in word for chr in p):
-        return "<script>localStorage.setItem('status','spc1');window.location='/generate/result'</script>Please wait..."
+        return "<script>localStorage.setItem('status','spc1');localStorage.setItem('pass','');window.location='/generate/result'</script>Please wait..."
 
     p = "" if p == None else p
     sc = "" if sc == None else sc
@@ -78,6 +78,9 @@ if (status == "d") {
     s.appendChild(s1);
 } else {if (status == "spc1") {s.textContent="Password cannot include some special character."};
 }};
+
+if (status == "spc1") {s.textContent="Password cannot include some special character."};
+
 if (pass=="") {} else {                                                                     var show_pass = document.getElementById("passwd");
     show_pass.textContent = "and your password is: ";
     s2 = document.createElement("b");
