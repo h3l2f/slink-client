@@ -125,7 +125,10 @@ let p = window.prompt("Enter password:","");
 if (p == null || p == "") {
 d = document.getElementById("sol");
 d.textContent = "User cancelled or didn't enter anything!";
-} else {window.location=path+"?p="+p}
+} else {
+d = document.getElementById("sol");
+d.textContent = "Checking password...";
+window.location=path+"?p="+p}
 });
 </script>
 
