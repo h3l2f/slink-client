@@ -24,7 +24,7 @@ def gen():
     url = request.form["url"]
     sc = request.form["scode"]
     if any(chr in word for chr in p):
-        return "<script>localStorage.setItem('status','spc1');localStorage.setItem('pass','');window.location='/generate/result'</script>Please wait..."
+        return """<script>localStorage.setItem("status","spc1");localStorage.setItem("pass","");window.location='/generate/result'</script>Please wait..."""
 
     p = "" if p == None else p
     sc = "" if sc == None else sc
