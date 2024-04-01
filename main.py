@@ -48,7 +48,7 @@ window.location="/generate/result";
 
 </script>
 <div>
-Please wait...
+Please wait...<br>{s}
 </div>
 </body>
 </html>
