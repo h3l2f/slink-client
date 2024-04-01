@@ -43,12 +43,12 @@ def gen():
 <script>
 localStorage.setItem("status","{s["s"]}");
 localStorage.setItem("scode","{s["scode"]}");
-localStorage.setItem("pass","{s["pass"]}");
+localStorage.setItem("pass",{s["pass"]});
 window.location="/generate/result";
 
 </script>
 <div>
-Please wait...<br>{s}<br>{data}
+Please wait...<br>
 </div>
 </body>
 </html>
