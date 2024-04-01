@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__,template_folder="templates")
 
-word = ["'",'"',"\ "]
+word = ["'",'"',"\\"]
 
 host = "http://slinkapi.pythonanywhere.com"
 
