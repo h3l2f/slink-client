@@ -76,7 +76,6 @@ if (status == "d") {
     s.textContent = "Your Scode is: ";
     s1.setAttribute("style","color : red;");
     s.appendChild(s1);
-} else {if (status == "spc1") {s.textContent="Password cannot include some special character."};
 }};
 
 if (status == "spc1") {s.textContent="Password cannot include some special character."};
