@@ -135,7 +135,7 @@ d.textContent = "User cancelled or didn't enter anything!";
 } else {
 d = document.getElementById("sol");
 d.textContent = "Checking password...";
-window.location=path+"?p="+p}
+document.location.replace(path+"?p="+p)}
 });
 </script>
 
